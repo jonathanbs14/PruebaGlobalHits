@@ -13,8 +13,8 @@ import com.reto.GlobalHits.Entity.Ejemplo;
 public interface EjemploRepository extends JpaRepository<Ejemplo, Integer> {
 
 	
-	@Procedure(name = "Ejemplo.getCodigoEjemplo")
-	public void getTotalCarsByModelEntiy(@Param("nombre") String nombre, @Param("fec_registro") Date fecha);
+	@Procedure(name = "Ejemplo.sp_ejemplo")
+	public Ejemplo getTotalCarsByModelEntiy(@Param("nombre") String nombre, @Param("fec_registro") Date fecha);
 }
 
 

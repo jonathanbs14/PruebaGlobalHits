@@ -20,24 +20,14 @@ public class Controller {
 	private EjemploRepository repository;
 	
 	
-	@PostMapping("/codigos")
+	@PostMapping(path = "/codigos")
 	public Out grabar(In  in) {
-
-		
-		
-		
-	Out afuera = new Out();
-
-
-	
-	repository.getTotalCarsByModelEntiy(in.getNombre(), in.getFechRegistro());
-	
-	
-	
-	afuera.setCodigo("1234526789");
-	afuera.setCursor("Prueba");
-	afuera.setMensaje("gracias");
-	return afuera;
+		Out afuera = new Out();
+		Ejemplo ejm =	repository.getTotalCarsByModelEntiy(in.getNombre(), in.getFechRegistro());
+		afuera.setCodigo(ejm.getCodigo());
+		afuera.setCursor(ejm.getCursor());
+		afuera.setMensaje(ejm.getMensaje());
+		return afuera;
 	}
 	
 	
